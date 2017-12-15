@@ -6,8 +6,8 @@
         <!-- Title dynamique en fonction de l'article -->
         <?php foreach ($articles as $key => $simple_articles): ?>
             <?php if ($_GET['article_id'] == $simple_articles['id']): ?>
-                <title><?php echo $simple_articles['title']; ?> - Mon premier blog !</title>
-            <?php endif ?>
+                <title><?php echo $simple_articles['title']; ?></title>
+            <?php endif; ?>
         <?php endforeach; ?>
         <!----------------------------------------------->
 
@@ -17,18 +17,20 @@
     <body class="article-body">
         <div class="container-fluid">
             <?php require('partials/header.php'); ?>
+
             <div class="row my-3 article-content">
                 <?php require('partials/nav.php'); ?>
+
                 <!-- Affichage d'un article en particulier -->
                 <main class="col-9">
                     <?php foreach ($articles as $key => $simple_articles): ?>
                         <?php if ($_GET['article_id'] == $simple_articles['id']): ?>
                             <article>
-                                <h1> <?php echo $simple_articles["title"]; ?> </h1>
-                                <span> <?php echo $simple_articles["date"]; ?> </span>
-                                <div class="article-content"> <?php echo $simple_articles["content"]; ?> </div>
+                                <h1> <?php echo $simple_articles['title']; ?> </h1>
+                                <span> <?php echo $simple_articles['date']; ?> </span>
+                                <div class="article-content"> <?php echo $simple_articles['content']; ?> </div>
                             </article>
-                        <?php endif ?>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </main>
                 <!------------------------------------------->

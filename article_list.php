@@ -12,7 +12,7 @@
          <?php foreach ($categories as $key => $categories_value): ?>
              <?php if ($_GET['category_id'] == $categories_value['id'] /*Ou simplement "== $key"*/  ): ?>
                  <title><?php echo $categories_value['name']; ?> - Mon premier blog !</title>
-             <?php endif ?>
+             <?php endif; ?>
          <?php endforeach; ?>
          <!------------------------------->
 
@@ -21,10 +21,10 @@
          <!-- Title pour tous les articles -->
          <?php foreach ($articles as $key => $all_articles): ?>
             <title>Tous les articles - Mon premier blog !</title>
-        <?php endforeach; ?>
+         <?php endforeach; ?>
          <!---------------------------------->
 
-     <?php endif ?>
+     <?php endif; ?>
      <!------------------------------------------------------------------>
      <!--                                                              -->
      <!------------------------------------------------------------------>
@@ -89,15 +89,15 @@
                         <?php foreach ($articles as $key => $all_articles): ?>
                             <article class="mb-4">
                                 <h2>
-                                    <?php echo $all_articles["title"]; ?>
+                                    <?php echo $all_articles['title']; ?>
                                 </h2>
                                 <span class="article-date">
-                                        <?php echo $all_articles["date"]; ?>
+                                        <?php echo $all_articles['date']; ?>
                                     </span>
                                 <div class="article-content">
-                                    <?php echo $all_articles["content"]; ?>
+                                    <?php echo $all_articles['content']; ?>
                                 </div>
-                                <a href="article.php?article_id=<?php echo $all_articles["id"]; ?>"> > Lire l'article </a>
+                                <a href="article.php?article_id=<?php echo $all_articles['id']; ?>"> > Lire l'article </a>
                             </article>
                         <?php endforeach; ?>
                         <!------------------------------------>

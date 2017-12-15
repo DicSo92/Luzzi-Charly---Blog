@@ -28,20 +28,21 @@
                     <?php foreach ($array_three_articles as $key => $three_articles): ?>
                         <article class="mb-4">
                             <h2>
-                                <?php echo $three_articles["title"]; ?>
+                                <?php echo $three_articles['title']; ?>
                             </h2>
                             <span class="article-date">
-                                <?php echo $three_articles["date"]; ?>
+                                <?php echo $three_articles['date']; ?>
                             </span>
                             <div class="article-content">
-                                <?php echo $three_articles["content"]; ?>
+                                <?php echo $three_articles['content']; ?>
                             </div>
-                            <a href="article.php?article_id=<?php echo $three_articles["id"]; ?>"> > Lire l'article </a>
+                            <a href="article.php?article_id=<?php echo $three_articles['id']; ?>"> > Lire l'article </a>
                         </article>
                     <?php endforeach; ?>
                     <!------------------------------------------------>
 					
 				</section>
+
 				<div class="text-right">
 					<a href="article_list.php">> Tous les articles</a>
 				</div>
