@@ -1,5 +1,9 @@
 <?php require_once('_datas.php'); ?>
 
+<?php $_GET['article_id'] = (int) $_GET['article_id']; ?>
+
+<?php if (isset($_GET['article_id']) AND $_GET['article_id']>=1 AND $_GET['article_id']<=count($articles)):?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,3 +45,10 @@
         </div>
     </body>
 </html>
+
+    <?php else:
+        header('Location: index.php');
+        exit();
+    ?>
+
+<?php endif; ?>
