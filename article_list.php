@@ -1,5 +1,9 @@
 <?php require_once('_datas.php'); ?>
 
+<?php $_GET['category_id'] = (int) $_GET['category_id']; ?>
+
+<?php if ($_GET['category_id']>=1 AND $_GET['category_id']<=count($categories)):?>
+
 <!DOCTYPE html>
 <html>
  <head>
@@ -116,3 +120,10 @@
 	</div>
  </body>
 </html>
+
+<?php else:
+    header('Location: index.php');
+    exit();
+    ?>
+
+<?php endif; ?>

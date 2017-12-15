@@ -46,9 +46,9 @@
     </body>
 </html>
 
-    <?php else:
-        header('Location: index.php');
-        exit();
+<?php else:
+    header('Location: index.php');
+    exit();
     ?>
 
 <?php endif; ?>
