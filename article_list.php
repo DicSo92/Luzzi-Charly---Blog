@@ -84,6 +84,12 @@
                         <?php endforeach; ?>
                         <!------------------------------------>
 
+                    <?php else:
+                        header('Location: index.php');
+                        exit();
+                        ?>
+
+                    <?php endif; ?>
                     <?php else: ?>
 
                         <!-- Contenu pour tous les articles -->
@@ -121,9 +127,4 @@
  </body>
 </html>
 
-<?php else:
-    header('Location: index.php');
-    exit();
-    ?>
 
-<?php endif; ?>
