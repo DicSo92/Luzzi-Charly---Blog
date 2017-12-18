@@ -30,11 +30,20 @@
                             <h2>
                                 <?php echo $three_articles['title']; ?>
                             </h2>
+                            <b class="article_category text-danger">
+                                [<?php
+                                foreach ($categories as $key=>$categorie):
+                                    if ($three_articles['category_id'] == $categorie['id']){
+                                        echo $categorie['name'];
+                                    }
+                                endforeach;
+                                ?>]
+                            </b>
                             <span class="article-date">
                                 <?php echo $three_articles['date']; ?>
                             </span>
                             <div class="article-content">
-                                <?php echo $three_articles['content']; ?>
+                                <?php echo $three_articles['summary']; ?>
                             </div>
                             <a href="article.php?article_id=<?php echo $three_articles['id']; ?>"> > Lire l'article </a>
                         </article>

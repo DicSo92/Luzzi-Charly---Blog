@@ -49,7 +49,7 @@
                                      <?php echo $categorys_articles["date"]; ?>
                                  </span>
                                  <div class="article-content">
-                                     <?php echo $categorys_articles["content"]; ?>
+                                     <?php echo $categorys_articles["summary"]; ?>
                                  </div>
                                  <a href="article.php?article_id=<?php echo $categorys_articles["id"]; ?>"> > Lire
                                      l'article </a>
@@ -84,18 +84,27 @@
 
                      <!-- Contenu pour tous les articles -->
                      <header>
-                         <h1>Tous les articles</h1>
+                         <h1 class="mb-4">Tous les articles :</h1>
                      </header>
                      <?php foreach ($articles as $key => $all_articles): ?>
                          <article class="mb-4">
                              <h2>
                                  <?php echo $all_articles['title']; ?>
                              </h2>
+                             <b class="article_category text-danger">
+                                 [<?php
+                                     foreach ($categories as $key=>$categorie):
+                                         if ($all_articles['category_id'] == $categorie['id']){
+                                             echo $categorie['name'];
+                                         }
+                                     endforeach;
+                                 ?>]
+                             </b>
                              <span class="article-date">
                                  <?php echo $all_articles['date']; ?>
                              </span>
                              <div class="article-content">
-                                 <?php echo $all_articles['content']; ?>
+                                 <?php echo $all_articles['summary']; ?>
                              </div>
                              <a href="article.php?article_id=<?php echo $all_articles['id']; ?>"> > Lire l'article </a>
                          </article>
