@@ -45,7 +45,7 @@
         </div>
     </body>
 </html>
-
+    
     <?php else:
         header('Location: index.php');
         exit();
