@@ -30,7 +30,7 @@
                             <h2>
                                 <?php echo $three_articles['title']; ?>
                             </h2>
-                            <b class="article_category text-danger">
+                            <b class="article_category">
                                 [<?php
                                 foreach ($categories as $key=>$categorie):
                                     if ($three_articles['category_id'] == $categorie['id']){
