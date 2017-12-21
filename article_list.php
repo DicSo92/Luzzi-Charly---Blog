@@ -73,7 +73,6 @@
      <!---------------------------------->
      <?php require('partials/head_assets.php'); ?>
 
- </head>
  <body class="article-list-body">
      <div class="container-fluid">
          <?php require('partials/header.php'); ?>
