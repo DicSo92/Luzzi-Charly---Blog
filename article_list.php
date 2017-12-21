@@ -12,7 +12,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
             <!------------------------------->
-        <?php else 
+        <?php else
             <?php require('partials/head_assets.php'); ?>
             </head>
             <body class="article-list-body">
