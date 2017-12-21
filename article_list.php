@@ -4,13 +4,13 @@
 <html>
     <head>
         <?php $_GET['category_id'] = (int)$_GET['category_id']; ?>
-        <?php if ($_GET['category_id'] >= 1 AND $_GET['category_id'] <= count($categories) AND isset($_GET['category_id'])): ?>  <!-- in_array($_GET['category_id'], $categories) -->
+        <?php if ($_GET['category_id'] >= 1 AND array_key_exists($_GET['category_id'], $categories) AND isset($_GET['category_id'])): ?>  <!-- in_array($_GET['category_id'], $categories) -->
             <!-- Title pour les categories -->
                 <?php if (isset($categories[$_GET['category_id']])): ?>
                     <title><?php echo $categories[$_GET['category_id']]['name'];?> - Mon premier blog !</title>
                 <?php endif; ?>
             <!------------------------------->
-        <?php elseif ($_GET['category_id'] >= 1 AND $_GET['category_id'] <= count($categories) AND !isset($_GET['category_id'])) : ?>
+        <?php elseif (!isset($_GET['category_id'])) : ?>
             <!-- Title pour tous les articles -->
             <?php foreach ($articles as $key => $all_articles): ?>
                 <title>Tous les articles - Mon premier blog !</title>
@@ -32,7 +32,7 @@
                 <main class="col-9">
                     <section class="all_aricles">
 
-                        <?php if ($_GET['category_id'] >= 1 AND $_GET['category_id'] <= count($categories) AND isset($_GET['category_id'])): ?>
+                        <?php if ($_GET['category_id'] >= 1 AND array_key_exists($_GET['category_id'], $categories) AND isset($_GET['category_id'])): ?>
                             <?php if (isset($categories[$_GET['category_id']])): ?>
                                 <header>
                                     <h1 class="mb-4">
@@ -43,14 +43,14 @@
                                     <?php echo $categories[$_GET['category_id']]['description']; ?>
                                 </div>
                             <?php endif; ?>
-                        <?php elseif ($_GET['category_id'] >= 1 AND $_GET['category_id'] <= count($categories) AND !isset($_GET['category_id'])): ?>
+                        <?php elseif (!isset($_GET['category_id'])): ?>
                             <header>
                                 <h1 class="mb-4">Tous les articles :</h1>
                             </header>
                         <?php endif; ?>
 
 
-                        <?php if ($_GET['category_id'] >= 1 AND $_GET['category_id'] <= count($categories) AND isset($_GET['category_id'])): ?>
+                        <?php if ($_GET['category_id'] >= 1 AND array_key_exists($_GET['category_id'], $categories) AND isset($_GET['category_id'])): ?>
                             <!-- Contenu pour les categories -->
                             <?php foreach ($articles as $key => $categorys_articles): ?>
                                 <?php if ($_GET['category_id'] == $categorys_articles['category_id']): ?>
@@ -70,7 +70,7 @@
                             <?php endforeach; ?>
                             <!------------------------------------>
 
-                        <?php elseif ($_GET['category_id'] >= 1 AND $_GET['category_id'] <= count($categories) AND !isset($_GET['category_id'])): ?>
+                        <?php elseif ($_GET['category_id'] >= 1 AND array_key_exists($_GET['category_id'], $categories) AND !isset($_GET['category_id'])): ?>
                             <!-- Contenu pour tous les articles -->
                             <?php foreach ($articles as $key => $all_articles): ?>
                                 <article class="mb-4">
