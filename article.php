@@ -31,6 +31,15 @@
                         <?php if ($_GET['article_id'] == $simple_articles['id']): ?>
                             <article>
                                 <h1> <?php echo $simple_articles['title']; ?> </h1>
+                                <b class="article_category">
+                                    [<?php
+                                    foreach ($categories as $key=>$categorie):
+                                        if ($simple_articles['category_id'] == $categorie['id']){
+                                            echo $categorie['name'];
+                                        }
+                                    endforeach;
+                                    ?>]
+                                </b>
                                 <span> <?php echo $simple_articles['date']; ?> </span>
                                 <div class="article-content"> <?php echo $simple_articles['content']; ?> </div>
                             </article>
