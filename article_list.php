@@ -3,9 +3,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <?php if (isset($_GET['category_id'])): ?>
-            <?php $_GET['category_id'] = (int)$_GET['category_id']; ?>
-        <?php if ($_GET['category_id'] >= 1 AND $_GET['category_id'] <= count($categories)): ?>  <!-- in_array($_GET['category_id'], $categories) -->
+        <?php $_GET['category_id'] = (int)$_GET['category_id']; ?>
+        <?php if ($_GET['category_id'] >= 1 AND $_GET['category_id'] <= count($categories) AND isset($_GET['category_id'])): ?>  <!-- in_array($_GET['category_id'], $categories) -->
             <!-- Title pour les categories -->
             <?php foreach ($categories as $key => $categories_value): ?>
                 <?php if ($_GET['category_id'] == $categories_value['id'] /*Ou simplement "== $key"*/): ?>
@@ -13,6 +12,7 @@
                 <?php endif; ?>
             <?php endforeach; ?>
             <!------------------------------->
+        <?php else 
             <?php require('partials/head_assets.php'); ?>
             </head>
             <body class="article-list-body">
@@ -63,11 +63,7 @@
 
     <?php else: ?> <!-- Pour isset -->
 
-            <!-- Title pour tous les articles -->
-            <?php foreach ($articles as $key => $all_articles): ?>
-                <title>Tous les articles - Mon premier blog !</title>
-            <?php endforeach; ?>
-            <!---------------------------------->
+
             <?php require('partials/head_assets.php'); ?>
             </head>
 
