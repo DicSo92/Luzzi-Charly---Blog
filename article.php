@@ -2,7 +2,7 @@
 
 <?php $_GET['article_id'] = (int) $_GET['article_id']; ?>
 
-<?php if (isset($_GET['article_id']) AND $_GET['article_id']>=1 AND $_GET['article_id']<=count($articles)):?>
+<?php if (isset($_GET['article_id']) AND $_GET['article_id']>=1 AND array_key_exists($_GET['article_id'], $articles)):?>
 
 <!DOCTYPE html>
 <html>

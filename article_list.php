@@ -5,7 +5,7 @@
     <head>
     <?php if (isset($_GET['category_id'])): ?>
             <?php $_GET['category_id'] = (int)$_GET['category_id']; ?>
-        <?php if ($_GET['category_id'] >= 1 AND $_GET['category_id'] <= count($categories)): ?>  <!-- in_array($_GET['category_id'], $categories) -->
+        <?php if ($_GET['category_id'] >= 1 AND array_key_exists($_GET['category_id'], $categories)): ?>  <!-- in_array($_GET['category_id'], $categories) -->
             <!-- Title pour les categories -->
             <?php foreach ($categories as $key => $categories_value): ?>
                 <?php if ($_GET['category_id'] == $categories_value['id'] /*Ou simplement "== $key"*/): ?>
