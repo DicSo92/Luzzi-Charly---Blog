@@ -61,7 +61,7 @@
 
         <?php endif; ?>
 
-    <?php else: ?> <!-- Pour isset -->
+    <?php else: ?> <!-- Si rien dans l'url -->
 
             <!-- Title pour tous les articles -->
             <?php foreach ($articles as $key => $all_articles): ?>
@@ -90,7 +90,7 @@
                                         </h2>
                                         <b class="article_category">
                                             [<?php
-                                            foreach ($categories as $key=>$categorie):
+                                            foreach ($categories as $keys=>$categorie):
                                                 if ($all_articles['category_id'] == $categorie['id']){
                                                     echo $categorie['name'];
                                                 }

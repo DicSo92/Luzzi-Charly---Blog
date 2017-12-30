@@ -33,7 +33,7 @@
                                 <h1> <?php echo $simple_articles['title']; ?> </h1>
                                 <b class="article_category">
                                     [<?php
-                                    foreach ($categories as $key=>$categorie):
+                                    foreach ($categories as $keys=>$categorie):
                                         if ($simple_articles['category_id'] == $categorie['id']){
                                             echo $categorie['name'];
                                         }
@@ -47,17 +47,16 @@
                     <?php endforeach; ?>
                 </main>
                 <!------------------------------------------->
+
             </div>
-
             <?php require('partials/footer.php'); ?>
-
         </div>
     </body>
 </html>
     
-    <?php else:
-        header('Location: index.php');
-        exit();
-    ?>
+<?php else:
+    header('Location: index.php');
+    exit();
+?>
 
 <?php endif; ?>

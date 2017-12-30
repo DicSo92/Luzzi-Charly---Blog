@@ -3,24 +3,20 @@
 <!DOCTYPE html>
 <html>
  <head>
-   
    <title>Homepage - Mon premier blog !</title>
-
    <?php require('partials/head_assets.php'); ?>
-   
  </head>
+
  <body class="index-body">
 	<div class="container-fluid">
-	
 		<?php require('partials/header.php'); ?>
-		
 		<div class="row my-3 index-content">
-		
 			<?php require('partials/nav.php'); ?>
-			
 			<main class="col-9">
 				<section class="latest_aricles">
-					<header class="mb-4"><h1>Les 3 derniers articles :</h1></header>
+					<header class="mb-4">
+                        <h1>Les 3 derniers articles :</h1>
+                    </header>
 					
 					<!-- liste des trois derniers articles en date -->
                     <?php $array_three_articles = array_slice($articles, 0, 3); ?>
@@ -32,7 +28,7 @@
                             </h2>
                             <b class="article_category">
                                 [<?php
-                                foreach ($categories as $key=>$categorie):
+                                foreach ($categories as $keys=>$categorie):
                                     if ($three_articles['category_id'] == $categorie['id']){
                                         echo $categorie['name'];
                                     }
@@ -49,7 +45,6 @@
                         </article>
                     <?php endforeach; ?>
                     <!------------------------------------------------>
-					
 				</section>
 
 				<div class="text-right">
@@ -59,7 +54,6 @@
 		</div>
 		
 		<?php require('partials/footer.php'); ?>
-
 	</div>
  </body>
 </html>
